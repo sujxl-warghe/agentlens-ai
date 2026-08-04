@@ -1,0 +1,151 @@
+# ==================================================
+# OS
+# ==================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==================================================
+# IDE
+# ==================================================
+.vscode/
+.idea/
+.history/
+*.swp
+*.swo
+
+# ==================================================
+# Environment Variables
+# ==================================================
+.env
+.env.*
+!.env.example
+
+# ==================================================
+# Logs
+# ==================================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==================================================
+# Node / Next.js
+# ==================================================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.cache/
+frontend/.eslintcache
+frontend/.swc/
+
+# Package Managers
+frontend/.npm/
+frontend/.pnpm-store/
+
+# ==================================================
+# Python
+# ==================================================
+backend/.venv/
+backend/venv/
+backend/env/
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/.coverage
+backend/htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# ==================================================
+# Build
+# ==================================================
+build/
+dist/
+coverage/
+
+# ==================================================
+# Database
+# ==================================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==================================================
+# Temporary Files
+# ==================================================
+tmp/
+temp/
+.cache/
+*.tmp
+
+# ==================================================
+# Archives
+# ==================================================
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# ==================================================
+# Secrets
+# ==================================================
+*.pem
+*.key
+*.crt
+*.p12
+
+# ==================================================
+# Python Virtual Environments (Global)
+# ==================================================
+.venv/
+venv/
+env/
+
+# ==================================================
+# Testing
+# ==================================================
+playwright-report/
+test-results/
+
+# ==================================================
+# Misc
+# ==================================================
+*.pid
+*.seed
+
+# ==================================================
+# macOS
+# ==================================================
+.AppleDouble
+.LSOverride
+
+# ==================================================
+# Generated Reports (Optional)
+# ==================================================
+reports/*.pdf
+reports/*.html
+reports/*.json
+reports/*.md
+
+# ==================================================
+# AgentLens Generated Scan Artifacts
+# ==================================================
+backend/uploads/
+backend/scans/
+backend/repos/
+backend/generated_prs/
+backend/tmp/
+backend/cache/
+backend/artifacts/
+
+frontend/public/uploads/
+frontend/public/generated/
