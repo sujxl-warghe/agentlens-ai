@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/*
+  AgentLens design tokens.
+  Palette is drawn from a vitals-monitor reading: this is a "doctor"
+  product for AI agents, so status color carries literal meaning
+  (teal = healthy, amber = warning, red = critical) rather than a
+  single decorative accent.
+*/
+:root {
+  --background: #0a0d12;
+  --surface: #11151c;
+  --surface-raised: #161b24;
+  --border: #232936;
+  --border-strong: #2e3646;
+
+  --foreground: #e8ebf0;
+  --muted-foreground: #8b93a3;
+  --subtle-foreground: #565f70;
+
+  --primary: #6c8ef5;
+  --primary-foreground: #050608;
+  --primary-muted: #6c8ef51a;
+
+  --teal: #5eead4;
+  --teal-muted: #5eead41a;
+  --amber: #ffb454;
+  --amber-muted: #ffb4541a;
+  --red: #f87171;
+  --red-muted: #f871711a;
+
+  --radius: 0.625rem;
+
+  --font-display: "Space Grotesk", "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, "Cascadia Code", monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-teal: var(--teal);
+  --color-amber: var(--amber);
+  --color-red: var(--red);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-shimmer: shimmer 1.6s infinite;
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-up {
+  animation: hero-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes readout-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.readout-fade-in {
+  animation: readout-fade-in 0.4s ease-out both;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--primary-muted);
+  color: var(--foreground);
+}
+
+/* Diagnostic scanline background used behind the hero */
+.scan-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  /* mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%); */
+}
+
+.mono-tag {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
