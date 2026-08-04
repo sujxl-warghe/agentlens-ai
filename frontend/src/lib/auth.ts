@@ -44,6 +44,7 @@ type AppToken = {
  *    not just hidden client-side, so it can't be bypassed by disabling a button.
  */
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   providers: [
     GitHub({
       clientId: process.env.GITHUB_ID,
