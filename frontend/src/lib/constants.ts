@@ -9,7 +9,7 @@ export const NAV_LINKS = [
   { label: "Architecture", href: "#architecture" },
 ] as const;
 
-export const GITHUB_REPO_URL = "https://github.com/agentlens-ai/agentlens";
+export const GITHUB_REPO_URL = "https://github.com/sujxl-warghe/agentlens-ai";
 
 export const DEMO_REPOSITORIES = [
   {
